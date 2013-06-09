@@ -2,12 +2,16 @@
 export PS1="\u@\h:\w$ "
 
 # Git
-alias gs="git status"
 alias ga="git add ."
-alias gm="git commit -m"
 alias gb="git branch"
+alias gd="git diff"
+alias gm="git commit -m"
+alias gs="git status"
 alias push="git push origin"
 alias pull="git pull origin"
+alias dev="git checkout develop"
+alias alpha="git checkout alpha"
+alias prod="git checkout production"
 
 # Utility
 alias mv="mv -iv"
@@ -16,7 +20,6 @@ alias ..="cd .."
 alias l="ls -aF"
 alias ll="ls -laF"
 alias reload="source ~/.bashrc"
-alias fap="fab"
 alias ds="sudo find / -name ".DS_Store" -depth -exec rm {} \;"
 
 # Compass
@@ -29,20 +32,23 @@ alias compass_new='compass create --bare --syntax sass --sass-dir "src/sass" --c
 source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=~/Sites/.virtualenvs
 export PROJECT_HOME=~/Sites/work/
-#virtualenvwrapper
-#passes arg to virtual env commands so it doesn't inherit any packages
+
+# virtualenvwrapper
+# passes arg to virtual env commands so it doesn't inherit any packages
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
-#pip
+# pip
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 
-#fab
+# fab
 alias fab="fab -f conf/fabfile.py"
+alias fap="fab"
 
+# TextMate
 export EDITOR="/usr/local/bin/mate -w"
 
-
+# Colorize Terminal
         RED="\[\033[0;31m\]"
      YELLOW="\[\033[0;33m\]"
       GREEN="\[\033[0;32m\]"
